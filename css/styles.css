@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+ul > li > a {
+    color: #b5bdd2;
+}
+
+.background-hero {
+    background-image: url(../img/stock.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #999;
+    /* filter: blur(8px);
+    -webkit-filter: blur(8px); */
+}
+
+.background-hero {
+    background-image: url(../img/stock.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.background-hero > .hero-body {
+    backdrop-filter: blur(8px);
+}
+
+.is-family-montserrat {
+    font-family: Montserrat;
+}
+
+.is-family-merriweather {
+    font-family: Merriweather;
+}
+
