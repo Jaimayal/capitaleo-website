@@ -1,0 +1,57 @@
+.hero-body {
+    background-image: url("../img/us.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    height: 60vh !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.section {
+    padding: 3rem 1.5rem !important;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+}
+
+.about-image {
+    max-width: 350px;
+    margin-right: 0rem;
+}
+
+.about-image img {
+    max-width: 100%;
+}
+
+.about-content {
+    flex-basis: 50%;
+    text-align: justify;
+}
+
+.ethics {
+    background-image: url("../img/ethics.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.experience {
+    background-image: url("../img/experience.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
