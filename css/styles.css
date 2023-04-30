@@ -2,7 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 
 ul > li > a {
-    color: #b5bdd2;
+    color: #716091;
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+ul > li {
+    margin: 1vh 0;
+}
+
+.is-primary-font {
+    color: #716091;
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 1.1rem;
 }
 
 .background-hero {
@@ -12,8 +26,6 @@ ul > li > a {
     background-attachment: fixed;
     background-size: cover;
     background-color: #999;
-    /* filter: blur(8px);
-    -webkit-filter: blur(8px); */
 }
 
 .background-hero {
@@ -28,6 +40,10 @@ ul > li > a {
     backdrop-filter: blur(8px);
 }
 
+.is-info {
+    background-color: #5210ce !important;
+}
+
 .is-family-montserrat {
     font-family: Montserrat;
 }
@@ -36,3 +52,6 @@ ul > li > a {
     font-family: Merriweather;
 }
 
+#logo {
+    padding: 0;
+}
