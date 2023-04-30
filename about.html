@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Quiénes Somos - Capitaleo</title>
+		<link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+		<link rel="stylesheet" href="./css/bulmacss-framework.min.css" />
+		<link rel="stylesheet" href="./css/styles.css" />
+		<link rel="stylesheet" href="./css/about.css" />
+		<script defer src="./js/alpinejs-framework.min.js"></script>
+	</head>
+	<body class="has-navbar-fixed-top">
+		<header x-data="{ showNavBar: false }">
+			<nav
+				x-on:click.outside="showNavBar = false"
+				class="navbar is-fixed-top"
+				role="navigation"
+				aria-label="main navigation"
+			>
+				<div class="navbar-brand">
+					<a id="logo" class="navbar-item ml-3" href="index.html">
+						<img src="./img/logo.png" width="112" height="45" />
+					</a>
+					<a
+						x-on:click="showNavBar = ! showNavBar"
+						role="button"
+						class="navbar-burger"
+						aria-label="menu"
+						aria-expanded="false"
+					>
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</a>
+				</div>
+				<div x-bind:class="showNavBar ? 'is-active' : ''""
+				class="navbar-menu is-primary-font">
+				<div class="navbar-start">
+					<a class="navbar-item" href="index.html"> Home </a>
+					<a class="navbar-item" href="about.html">
+						¿Quiénes Somos?
+					</a>
+				</div>
+				<div class="navbar-end">
+					<div class="navbar-item">
+						<div class="buttons">
+							<a class="button is-info is-fullwidth">
+								<strong>Capitaliza</strong>
+							</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<section class="hero is-medium is-primary">
+			<div class="hero-body">
+				<div class="container">
+					<h1 class="title is-1 has-text-white">Quiénes somos</h1>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<h2 class="title is-2 is-font-montserrat">Nuestra historia</h2>
+				<p class="is-font-montserrat">
+					Somos una empresa de inversiones fundada en 2015 por un
+					grupo de asociados graduados de la Escuela de Economía de la
+					Universidad de Michigan. Con el objetivo de ayudar a las
+					personas a tomar mejores decisiones financieras y alcanzar
+					sus metas económicas, nos unimos para formar una empresa que
+					ofreciera servicios de inversión seguros y confiables.
+				</p>
+			</div>
+		</section>
+
+		<section class="ethics">
+			<div class="container has-text-centered">
+				<h2 class="title is-2 has-text-white is-font-montserrat">
+					Ética y transparencia
+				</h2>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<h2 class="title is-2 is-font-montserrat">
+					Nuestra experiencia
+				</h2>
+				<p class="is-font-montserrat">
+					En Capitaleo, nuestro equipo está formado por expertos en
+					inversiones altamente capacitados y con experiencia en el
+					campo financiero. Trabajamos en colaboración con algunas de
+					las principales empresas fintech internacionales para
+					brindar soluciones innovadoras y efectivas a nuestros
+					clientes. Nuestra experiencia nos permite ofrecer un enfoque
+					personalizado para ayudar a nuestros clientes a alcanzar sus
+					metas financieras a largo plazo.
+				</p>
+			</div>
+		</section>
+		<section class="experience">
+			<div class="container has-text-centered">
+				<h2 class="title is-2 has-text-white is-font-montserrat">
+					Experiencia comprobada
+				</h2>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<h2 class="title is-2 is-font-montserrat">
+					Nuestros servicios
+				</h2>
+				<p class="is-font-montserrat">
+					En Capitaleo, ofrecemos servicios de inversión diseñados
+					para ayudar a nuestros clientes a crear nuevas fuentes de
+					ingresos, invertir su dinero de manera inteligente y
+					conservar su patrimonio. Nuestros servicios incluyen:
+				</p>
+				<ul class="is-font-montserrat">
+					<li>Asesoramiento financiero personalizado</li>
+					<li>Inversiones en bolsa y en fondos de inversión</li>
+					<li>Planes de ahorro y de pensiones</li>
+					<li>Gestión de patrimonio</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<h2 class="title is-2">Nuestros valores</h2>
+				<p>
+					En Capitaleo, nos regimos por altos estándares éticos y de
+					transparencia en todas nuestras operaciones. Valoramos la
+					confianza y la lealtad de nuestros clientes y trabajamos
+					arduamente para mantener su satisfacción y fidelidad. Nos
+					esforzamos por brindar servicios de inversión seguros y
+					confiables para ayudar a nuestros clientes a alcanzar sus
+					metas financieras a largo plazo.
+				</p>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container about">
+        <div class="columns">
+          <div class="column is-half is-flex is-justify-content-center">
+            <div class="about-image ">
+              <img src="./img/team.jpg" alt="Nuestro equipo" />
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="about-content">
+              <h2 class="title is-2">Nuestro equipo</h2>
+              <p>
+                En Capitaleo, nuestro equipo está formado por expertos
+                en inversiones altamente capacitados y con experiencia
+                en el campo financiero. Nos enorgullece ofrecer
+                servicios de inversión personalizados y de alta calidad
+                a nuestros clientes. Nos esforzamos por trabajar en
+                colaboración con nuestros clientes para ayudarles a
+                alcanzar sus objetivos financieros a largo plazo.
+              </p>
+            </div>
+          </div>
+        </div>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<div class="content has-text-centered">
+				<p>
+					<img
+						src="./img/logo.png"
+						alt="Capitaleo"
+						width="50px"
+						height="50px"
+					/>
+					<br />
+					<strong>Capitaleo</strong> &copy; 2023. Todos los derechos
+					reservados.
+          <h5 class="text is-3">Elaborado por: Jaime Ayala Fernandez</h5>
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>
