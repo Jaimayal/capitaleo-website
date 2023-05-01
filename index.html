@@ -230,5 +230,130 @@
         </div>
       </footer>
 		</footer>
+		<div
+			x-bind:class="showForm ? 'is-active' : ''"
+			x-show="showForm"
+			class="modal"
+		>
+			<div class="modal-background"></div>
+			<div x-on:click.outside="showForm = false" class="modal-card">
+				<header class="modal-card-head">
+					<p class="modal-card-title">Modal title</p>
+					<button
+						class="delete"
+						aria-label="close"
+						x-on:click="showForm = false"
+					></button>
+				</header>
+				<section class="modal-card-body">
+					<div x-data="{ name: '', isTouched: false }" class="field">
+						<label class="label">Nombre</label>
+						<div class="control has-icons-left has-icons-right">
+							<input
+								x-model="name"
+								x-on:keypress="isTouched = true"
+								x-bind:class="isTouched ? (name ? 'is-success' : 'is-danger') : ''"
+								class="input"
+								type="text"
+								placeholder="Text input"
+								value="bulma"
+							/>
+							<span class="icon is-small is-left">
+								<i class="fas fa-user"></i>
+							</span>
+							<span 
+								x-show="isTouched ? (name ? true : false) : false"
+								class="icon is-small is-right">
+								<i class="fas fa-check"></i>
+							</span>
+							<span 
+								x-show="isTouched ? (name ? false : true) : false" 
+								class="icon is-small is-right">
+								<i class="fas fa-exclamation-triangle"></i>
+							</span>
+						</div>
+					</div>
+
+					<div x-data="{ email: '', isTouched: false }" class="field">
+						<label class="label">Email</label>
+						<div class="control has-icons-left has-icons-right">
+							<input
+								x-model="email"
+								x-on:keypress="isTouched = true"
+								x-bind:class="isTouched ? (email ? 'is-success' : 'is-danger') : ''"
+								class="input"
+								type="email"
+								placeholder="Email input"
+								value="hello@"
+							/>
+							<span class="icon is-small is-left">
+								<i class="fas fa-envelope"></i>
+							</span>
+							<span 
+								x-show="isTouched ? (email ? true : false) : false"
+								class="icon is-small is-right">
+								<i class="fas fa-check"></i>
+							</span>
+							<span 
+								x-show="isTouched ? (email ? false : true) : false" 
+								class="icon is-small is-right">
+								<i class="fas fa-exclamation-triangle"></i>
+							</span>
+						</div>
+					</div>
+
+					<div class="field">
+						<label class="label">Titulo</label>
+						<div class="control">
+							<div class="select">
+								<select>
+									<option>Quiero recibir Asesoramiento</option>
+									<option>Quiero que me ayuden a Invertir</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="field">
+						<label class="label">Mensaje</label>
+						<div class="control">
+							<textarea
+								class="textarea"
+								placeholder="Textarea"
+							></textarea>
+						</div>
+					</div>
+
+					<div class="field">
+						<div class="control">
+							<label class="checkbox">
+								<input type="checkbox" />
+								Acepto recibir una recomndacion de Capitaleo
+							</label>
+						</div>
+					</div>
+				</section>
+				<footer class="modal-card-foot">
+					<div class="field is-grouped">
+						<div class="control">
+							<button
+								x-on:click="showForm = false"
+								class="button is-link"
+							>
+								Enviar
+							</button>
+						</div>
+						<div class="control">
+							<button
+								x-on:click="showForm = false"
+								class="button is-link is-light"
+							>
+								Cancelar
+							</button>
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
 	</body>
 </html>

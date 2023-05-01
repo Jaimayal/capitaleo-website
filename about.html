@@ -10,8 +10,12 @@
 		<link rel="stylesheet" href="./css/styles.css" />
 		<link rel="stylesheet" href="./css/about.css" />
 		<script defer src="./js/alpinejs-framework.min.js"></script>
+		<script
+			src="https://kit.fontawesome.com/d01ca8c537.js"
+			crossorigin="anonymous"
+		></script>
 	</head>
-	<body class="has-navbar-fixed-top">
+	<body x-data="{ showForm: false }" class="has-navbar-fixed-top">
 		<header x-data="{ showNavBar: false }">
 			<nav
 				x-on:click.outside="showNavBar = false"
@@ -46,7 +50,10 @@
 				<div class="navbar-end">
 					<div class="navbar-item">
 						<div class="buttons">
-							<a class="button is-info is-fullwidth">
+							<a
+								class="button is-info is-fullwidth"
+								x-on:click="showForm = true"
+							>
 								<strong>Capitaliza</strong>
 							</a>
 						</div>
@@ -61,7 +68,6 @@
 				</div>
 			</div>
 		</section>
-
 		<section class="section">
 			<div class="container">
 				<h2 class="title is-2 is-font-montserrat">Nuestra historia</h2>
@@ -75,7 +81,6 @@
 				</p>
 			</div>
 		</section>
-
 		<section class="ethics">
 			<div class="container has-text-centered">
 				<h2 class="title is-2 has-text-white is-font-montserrat">
@@ -83,7 +88,6 @@
 				</h2>
 			</div>
 		</section>
-
 		<section class="section">
 			<div class="container">
 				<h2 class="title is-2 is-font-montserrat">
@@ -108,7 +112,6 @@
 				</h2>
 			</div>
 		</section>
-
 		<section class="section">
 			<div class="container">
 				<h2 class="title is-2 is-font-montserrat">
@@ -128,7 +131,6 @@
 				</ul>
 			</div>
 		</section>
-
 		<section class="section">
 			<div class="container">
 				<h2 class="title is-2">Nuestros valores</h2>
@@ -143,33 +145,35 @@
 				</p>
 			</div>
 		</section>
-
 		<section class="section">
 			<div class="container about">
-        <div class="columns">
-          <div class="column is-half is-flex is-justify-content-center">
-            <div class="about-image ">
-              <img src="./img/team.jpg" alt="Nuestro equipo" />
-            </div>
-          </div>
-          <div class="column is-half">
-            <div class="about-content">
-              <h2 class="title is-2">Nuestro equipo</h2>
-              <p>
-                En Capitaleo, nuestro equipo está formado por expertos
-                en inversiones altamente capacitados y con experiencia
-                en el campo financiero. Nos enorgullece ofrecer
-                servicios de inversión personalizados y de alta calidad
-                a nuestros clientes. Nos esforzamos por trabajar en
-                colaboración con nuestros clientes para ayudarles a
-                alcanzar sus objetivos financieros a largo plazo.
-              </p>
-            </div>
-          </div>
-        </div>
+				<div class="columns">
+					<div
+						class="column is-half is-flex is-justify-content-center"
+					>
+						<div class="about-image">
+							<img src="./img/team.jpg" alt="Nuestro equipo" />
+						</div>
+					</div>
+					<div class="column is-half">
+						<div class="about-content">
+							<h2 class="title is-2">Nuestro equipo</h2>
+							<p>
+								En Capitaleo, nuestro equipo está formado por
+								expertos en inversiones altamente capacitados y
+								con experiencia en el campo financiero. Nos
+								enorgullece ofrecer servicios de inversión
+								personalizados y de alta calidad a nuestros
+								clientes. Nos esforzamos por trabajar en
+								colaboración con nuestros clientes para
+								ayudarles a alcanzar sus objetivos financieros a
+								largo plazo.
+							</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
-
 		<footer class="footer">
 			<div class="content has-text-centered">
 				<p>
@@ -182,9 +186,142 @@
 					<br />
 					<strong>Capitaleo</strong> &copy; 2023. Todos los derechos
 					reservados.
-          <h5 class="text is-3">Elaborado por: Jaime Ayala Fernandez</h5>
 				</p>
+				<h5 class="text is-3">Elaborado por: Jaime Ayala Fernandez</h5>
 			</div>
 		</footer>
+		<div
+			x-bind:class="showForm ? 'is-active' : ''"
+			x-show="showForm"
+			class="modal"
+		>
+			<div class="modal-background"></div>
+			<div x-on:click.outside="showForm = false" class="modal-card">
+				<header class="modal-card-head">
+					<p class="modal-card-title">Modal title</p>
+					<button
+						class="delete"
+						aria-label="close"
+						x-on:click="showForm = false"
+					></button>
+				</header>
+				<section class="modal-card-body">
+					<div x-data="{ name: '', isTouched: false }" class="field">
+						<label class="label">Nombre</label>
+						<div class="control has-icons-left has-icons-right">
+							<input
+								x-model="name"
+								x-on:keypress="isTouched = true"
+								x-bind:class="isTouched ? (name ? 'is-success' : 'is-danger') : ''"
+								class="input"
+								type="text"
+								placeholder="Text input"
+								value="bulma"
+							/>
+							<span class="icon is-small is-left">
+								<i class="fas fa-user"></i>
+							</span>
+							<span
+								x-show="isTouched ? (name ? true : false) : false"
+								class="icon is-small is-right"
+							>
+								<i class="fas fa-check"></i>
+							</span>
+							<span
+								x-show="isTouched ? (name ? false : true) : false"
+								class="icon is-small is-right"
+							>
+								<i class="fas fa-exclamation-triangle"></i>
+							</span>
+						</div>
+					</div>
+
+					<div x-data="{ email: '', isTouched: false }" class="field">
+						<label class="label">Email</label>
+						<div class="control has-icons-left has-icons-right">
+							<input
+								x-model="email"
+								x-on:keypress="isTouched = true"
+								x-bind:class="isTouched ? (email ? 'is-success' : 'is-danger') : ''"
+								class="input"
+								type="email"
+								placeholder="Email input"
+								value="hello@"
+							/>
+							<span class="icon is-small is-left">
+								<i class="fas fa-envelope"></i>
+							</span>
+							<span
+								x-show="isTouched ? (email ? true : false) : false"
+								class="icon is-small is-right"
+							>
+								<i class="fas fa-check"></i>
+							</span>
+							<span
+								x-show="isTouched ? (email ? false : true) : false"
+								class="icon is-small is-right"
+							>
+								<i class="fas fa-exclamation-triangle"></i>
+							</span>
+						</div>
+					</div>
+
+					<div class="field">
+						<label class="label">Titulo</label>
+						<div class="control">
+							<div class="select">
+								<select>
+									<option>
+										Quiero recibir Asesoramiento
+									</option>
+									<option>
+										Quiero que me ayuden a Invertir
+									</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="field">
+						<label class="label">Mensaje</label>
+						<div class="control">
+							<textarea
+								class="textarea"
+								placeholder="Textarea"
+							></textarea>
+						</div>
+					</div>
+
+					<div class="field">
+						<div class="control">
+							<label class="checkbox">
+								<input type="checkbox" />
+								Acepto recibir una recomndacion de Capitaleo
+							</label>
+						</div>
+					</div>
+				</section>
+				<footer class="modal-card-foot">
+					<div class="field is-grouped">
+						<div class="control">
+							<button
+								x-on:click="showForm = false"
+								class="button is-link"
+							>
+								Enviar
+							</button>
+						</div>
+						<div class="control">
+							<button
+								x-on:click="showForm = false"
+								class="button is-link is-light"
+							>
+								Cancelar
+							</button>
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
 	</body>
 </html>
