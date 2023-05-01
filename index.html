@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="./css/styles.css" />
 		<script defer src="./js/alpinejs-framework.min.js"></script>
 	</head>
-	<body class="has-navbar-fixed-top">
+	<body x-data="{ showForm: false }" class="has-navbar-fixed-top">
 		<header x-data="{ showNavBar: false }">
 			<nav
 				x-on:click.outside="showNavBar = false"
@@ -45,7 +45,7 @@
 				<div class="navbar-end">
 					<div class="navbar-item">
 						<div class="buttons">
-							<a class="button is-info is-fullwidth">
+							<a x-on:click="showForm = true" class="button is-info is-fullwidth">
 								<strong>Capitaliza</strong>
 							</a>
 						</div>
@@ -61,7 +61,7 @@
 					>
 						Capitaleo
 					</p>
-					<button class="button is-info is-large is-responsive">
+					<button x-on:click="showForm = true" class="button is-info is-large is-responsive">
 						<span
 							class="is-family-montserrat has-text-weight-medium"
 							>Capitaliza el Futuro</span
@@ -168,6 +168,7 @@
 				</div>
 			</div>
 			<button
+				x-on:click="showForm = true"
 				class="button mt-6 is-info is-large is-fullwidth has-text-weight-bold"
 			>
 				<span class="is-family-montserrat is-large"
@@ -238,7 +239,7 @@
 			<div class="modal-background"></div>
 			<div x-on:click.outside="showForm = false" class="modal-card">
 				<header class="modal-card-head">
-					<p class="modal-card-title">Modal title</p>
+					<p class="modal-card-title">Capitaliza</p>
 					<button
 						class="delete"
 						aria-label="close"
