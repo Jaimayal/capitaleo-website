@@ -3,4 +3,4 @@ This is a website for Capitaleo, a company that provides financial services to i
 
 Visit the live website at [capitaleo](https://capitaleo.mx).
 
-*Note: This website is a sample project. It is not the official website of Capitaleo and it is not intended for commercial use.*
+*Note: This website is a sample school project. It is not the official website of Capitaleo and it is not intended for commercial use.*
